@@ -1,6 +1,6 @@
 .DS_Store
 .vscode
-disk_test
+disks_test
 *.docx
 *.o
 *.out
