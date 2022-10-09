@@ -161,7 +161,7 @@ sorted_disks sort_alternate(const disk_state& before) {
   //int state; We can make changes on before
   disk_state after = before;
   //For loop encompasses all light disks -> We can effectively move all of one disk - O(n)
-  for (size_t i = 0; i < after.light_count(); i++)
+  for (size_t i = 0; i < after.total_count() / 2; i++)
   {
     //For ever light in total until end - O(n)
     for (size_t j = i; j < after.total_count() - 1; j++)
