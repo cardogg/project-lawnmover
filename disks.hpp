@@ -184,13 +184,13 @@ sorted_disks sort_lawnmower(const disk_state& before) {
   int numOfSwap = 0;
   disk_state after = before;
 
-  //
+  //Loop between the whole vector - O(n)
   for (size_t i = 0; i < after.total_count() - 1; i++)
   {
-    //For ever light in total until end - O(n)
+    //Loops back and fourth between the total of it and perform swaps when needed - O(n)
     for (size_t j = i; j < after.total_count() - 1; j++)
     {
-      
+      //Swap like before but remember we are going back and forth
       if (after.get(j) > after.get(j + 1))
       {
         after.swap(j);
@@ -198,6 +198,8 @@ sorted_disks sort_lawnmower(const disk_state& before) {
       }
     } 
   }
+
+  //Test Comments -- In hindsight the implementation worked find I just wrote before instead of after in the state
   //std::cout << numOfSwap << std::endl;
   //std::cout << after.is_sorted() << std::endl;
   return sorted_disks(disk_state(after), numOfSwap);
