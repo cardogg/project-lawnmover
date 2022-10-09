@@ -198,7 +198,7 @@ sorted_disks sort_lawnmower(const disk_state& before) {
       }
     } 
   }
-  std::cout << numOfSwap << std::endl;
-  std::cout << after.is_sorted() << std::endl;
-  return sorted_disks(disk_state(before), numOfSwap);
+  //std::cout << numOfSwap << std::endl;
+  //std::cout << after.is_sorted() << std::endl;
+  return sorted_disks(disk_state(after), numOfSwap);
 }
